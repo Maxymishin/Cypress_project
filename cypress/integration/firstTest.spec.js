@@ -1,34 +1,34 @@
 /// <reference types="Cypress" />
 
-// it('By ID', () => {
-//     cy.visit("https://facebook.com/")
-//     cy.get('#email')
-// });
+it('By ID', () => {
+    cy.visit("https://facebook.com/")
+    cy.get('#email')
+});
 
-// it('By CLass', () => {
-//     cy.visit("https://facebook.com/")
-//     cy.get('.email')
-// });
+it('By CLass', () => {
+    cy.visit("https://facebook.com/")
+    cy.get('.email')
+});
 
-// it('By Tag', () => {
-//     cy.visit("https://facebook.com/")
-//     cy.get('nav')
-// });
+it('By Tag', () => {
+    cy.visit("https://facebook.com/")
+    cy.get('nav')
+});
 
-// it('By Tag Value', () => {
-//     cy.visit("https://facebook.com/")
-//     cy.get('[name="pass"]')
-// });
+it('By Tag Value', () => {
+    cy.visit("https://facebook.com/")
+    cy.get('[name="pass"]')
+});
 
-// it('By diffent tag ', () => {
-//     cy.visit("https://facebook.com/")
-//     cy.get('[data-testid="open-registration-form-button"]' /* [tag="value"]' */)
-// });
+it('By diffent tag ', () => {
+    cy.visit("https://facebook.com/")
+    cy.get('[data-testid="open-registration-form-button"]' /* [tag="value"]' */)
+});
 
-// it.only('By Contains Name', () => {
-//     cy.visit("/")
-//     cy.get('*[class^="card"]')
-// });
+it.only('By Contains Name', () => {
+    cy.visit("/")
+    cy.get('*[class^="card"]')
+});
 
 it('Using Get with Find and Ea', () => {
     cy.visit("https://next.privat24.ua/deposit")
