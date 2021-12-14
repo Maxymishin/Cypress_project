@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+import { basePage } from "../support/pages/basePage"
 import { mobileReplenishment } from "../support/pages/mobileReplenishment"
 import { transfers } from "../support/pages/transfer"
 
@@ -8,9 +9,9 @@ it('Replenisment of Ukraine mobile phone number', () => {
     cy.wait(2000)
 
        mobileReplenishment.typePhoneNumber('662331223')
-       mobileReplenishment.typeAmout('10')
-       mobileReplenishment.typeDebitCard('4552331448138217', '0524', '111', 'Shayne', 'Mcconnell')
-       mobileReplenishment.submitPayment()
+       basePage.typeAmout('10')
+       basePage.typeDebitCard('4552331448138217', '0524', '111', 'Shayne', 'Mcconnell')
+       basePage.submitPayment()
        mobileReplenishment.checkDebitCard('4552 **** **** 8217')
        mobileReplenishment.checkMobileOperetorName('Vodafone')
        mobileReplenishment.checkСurrency('UAH')
@@ -60,11 +61,11 @@ it.only('Money transfer between foreign cards', () => {
     cy.visit('/money-transfer/card')
         .wait(1000)
 
-    transfers.typeDebitCardData('4552331448138217', '0524', '111', 'Shayne', 'Mcconnell')
+    basePage.typeDebitCard('4552331448138217', '0524', '111', 'Shayne', 'Mcconnell')
     transfers.typeReceiverCardData('5309233034765085', 'Juliana', 'Janssen')
-    transfers.typeAmout('300')
+    basePage.typeAmout('300')
     cy.wait(2000)
-    transfers.submitPayment()
+    basePage.submitPayment()
     transfers.checkDebitAndReceiverCard('4552 3314 4813 8217','5309 2330 3476 5085' )
     transfers.chaeckPayerCurrency('85.95 UAH')
     transfers.checkTotalPrice('385.95')
